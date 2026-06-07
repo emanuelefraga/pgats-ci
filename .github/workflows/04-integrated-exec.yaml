@@ -25,7 +25,7 @@ jobs:
   #nome do job
   inspecao:
     # maquina onde o job vai rodar
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     # passos do job
     steps:
@@ -49,7 +49,7 @@ jobs:
         run: yarn lint
 
   unidade:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [inspecao]
 
     steps:
@@ -69,7 +69,7 @@ jobs:
         run: yarn run test
 
   e2e-tests:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [inspecao]
 
     steps:
@@ -106,7 +106,7 @@ jobs:
           files: results.xml
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [unidade, e2e-tests]
 
     steps:
