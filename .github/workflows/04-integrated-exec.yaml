@@ -94,10 +94,10 @@ jobs:
 
       # Action do Marketplace - publica resumo dos testes no GitHub
       - name: Publicar resumo dos testes E2E
-        uses: EnricoMi/publish-unit-test-result-action/windows@v2
+        uses: ctrf-io/github-test-reporter@v1
         if: ${{ always() }}
         with:
-          files: results.xml
+          report-path: playwright-report/results.xml
 
   deploy:
     runs-on: self-hosted
