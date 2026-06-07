@@ -34,7 +34,6 @@ jobs:
 
       # instalção do node
       - uses: actions/setup-node@v4
-        
 
       # instalação do Yarn
       - name: Instalando Yarn
@@ -55,7 +54,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
-        
 
       - name: Instalando Yarn
         run: npm install -g yarn
@@ -74,7 +72,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
-        
 
       - name: Instalando Yarn
         run: npm install -g yarn
