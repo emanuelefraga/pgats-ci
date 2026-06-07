@@ -1,0 +1,19 @@
+stages:
+  - test
+
+unit-tests:
+  stage: test
+  image: node:20
+
+  before_script:
+    - npm install -g yarn
+    - yarn
+
+  script:
+    - yarn test
+
+  artifacts:
+    when: always
+    paths:
+      - coverage/
+    expire_in: 7 days
